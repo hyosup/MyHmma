@@ -1,0 +1,58 @@
+{
+    "configurations": [
+        {
+            "name": "Start zpaystate",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "cwd": "${workspaceFolder}/zpaystate",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--open",
+                "test/flpSandbox.html#comhmmausamyhmmamypayzpaystate-display"
+            ],
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "outputCapture": "std",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect",
+                "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+            }
+        },
+        {
+            "name": "Start zpaystate Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/zpaystate",
+            "runtimeExecutable": "npx",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--config",
+                "./ui5-local.yaml",
+                "--open",
+                "test/flpSandbox.html#comhmmausamyhmmamypayzpaystate-display"
+            ],
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "outputCapture": "std",
+            "port": 9229,
+            "env": {
+                "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+            }
+        }
+    ],
+    "compounds": []
+}
