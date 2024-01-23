@@ -1,0 +1,68 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:table="sap.ui.table"
+    xmlns:core="sap.ui.core">
+    <Dialog binding="{/detail}" title="{Ename} {i18n>FEDERAL (CHANGE REQUEST)}" contentWidth="1200px">
+        <content>
+            <Panel headerText="Status" class="sapUiSmallMarginTop">
+                <content>
+                    <VBox binding="{/sample}">
+                        <grid:CSSGrid class="grid-form" gridTemplateColumns="3fr 1fr" gridGap="0px 0px">
+                            <HBox class="grid-item label-box" alignItems="Center">
+                                <Label text="Step 1: Marital Status" />
+                            </HBox>
+                            <HBox class="grid-item contents-box" alignItems="Center">
+                                 <Select>
+                                    <core:Item key="GR" text="Greece" />
+                                    <core:Item key="MX" text="Mexico" />
+                                    <core:Item key="NO" text="Norway" />
+                                    <core:Item key="NZ" text="New Zealand" />
+                                    <core:Item key="NL" text="Netherlands" />
+                                </Select>
+                            </HBox>
+                            <HBox class="grid-item label-box" alignItems="Center">
+                                <Label text="Step 2 Complete this step if you(1) hold more" />
+                            </HBox>
+                            <HBox class="grid-item contents-box" alignItems="Center">
+                               <HBox binding="{/sample}">
+                                    <CheckBox text="Tax exempt Indicator" />
+                                </HBox>
+                            </HBox>
+                            <HBox class="grid-item label-box" alignItems="Center">
+                                <Label text="Step 3" />
+                            </HBox>
+                            <HBox class="grid-item contents-box" alignItems="Center">
+                                <Text text="{Taxlevel}" />
+                            </HBox>
+                            <HBox class="grid-item label-box" alignItems="Center">
+                                <Label text="Step 4" />
+                            </HBox>
+                            <HBox class="grid-item contents-box" alignItems="Center">
+                                <Text text="{Taxlevel}" />
+                            </HBox>
+                        </grid:CSSGrid>
+                    </VBox>
+                </content>
+            </Panel>
+            <Panel class="sapUiSmallMarginTop">
+                <content>
+                    <VBox binding="{/sample}">
+                        <grid:CSSGrid class="grid-form" gridTemplateColumns="3fr 1fr" gridGap="0px 0px">
+                            <HBox class="grid-item label-box" alignItems="Center">
+                                <Label text="Step 1: Marital Status" />
+                            </HBox>
+                            <HBox class="grid-item contents-box" alignItems="Center">
+                                <Text text="{Taxauthority}" />
+                            </HBox>
+                           
+                        </grid:CSSGrid>
+                    </VBox>
+                </content>
+            </Panel>
+            
+        </content>
+        <buttons>
+            <Button text="{i18n>closeButton}" press=".onPressCloseDialog" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>
