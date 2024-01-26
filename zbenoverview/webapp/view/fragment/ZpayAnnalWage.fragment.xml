@@ -1,0 +1,46 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:table="sap.ui.table"
+    xmlns:core="sap.ui.core">
+    <Panel headerText="Cafe Deduction Program" class="sapUiSmallMarginTop">
+        <content>
+                <IconTabBar>
+                    <items>
+                        <IconTabFilter text="Health" key="Health"  >
+                            <content>
+                                <VBox binding="{/sample}">
+                                    <table:Table selectionMode="None" visibleRowCount="20" >
+                                        <table:columns>
+                                            <table:Column width="30%" filterProperty="Idx" sortProperty="Idx">
+                                                <table:label>
+                                                    <Label text="Benefit Plan" width="100%" textAlign="Center" />
+                                                </table:label>
+                                                <table:template>
+                                                    <Text text="BCBS of Alabama" width="100%" textAlign="Center" />
+                                                </table:template>
+                                            </table:Column>
+                                            <table:Column width="70%" filterProperty="Relation" sortProperty="Relation">
+                                                <table:label>
+                                                    <Label text="Detail" width="100%" textAlign="Center" />
+                                                </table:label>
+                                                <table:template>
+                                                    <Text text="{CheckVal}" width="100%" textAlign="Center" />
+                                                </table:template>
+                                            </table:Column>
+                                        </table:columns>
+                                    </table:Table>
+                                </VBox>
+                            </content>
+                        </IconTabFilter>
+                        <IconTabFilter text="Insurance" key="Insurance">
+                            <Text text="Attachments go here ..." />
+                        </IconTabFilter>
+                        <IconTabFilter text="Saving" key="Saving">
+                            <Text text="Notes go here ..." />
+                        </IconTabFilter>
+                       
+                    </items>
+            </IconTabBar>
+        </content>
+    </Panel>
+</core:FragmentDefinition>

@@ -1,0 +1,85 @@
+<!-- <mvc:View controllerName="com.crud.zsapcrud.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content />
+    </Page>
+</mvc:View> -->
+<mvc:View controllerName="com.crud.zsapcrud.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:myform="sap.ui.layout.form">
+    <App id="_IDGenApp1">
+        <Page id="page">
+        <content>
+            <Table id="_IDGenTable1" items="{/yuserdataSet}" selectionChange="onSelect" mode="SingleSelectLeft" fixedLayout="false">
+                <columns>
+                    <Column id="_IDGenColumn1">
+                        <Text id="_IDGenText1" text="Employee Id"/>
+                    </Column>
+
+                    <Column id="_IDGenColumn2">
+                        <Text id="_IDGenText2" text="Name"/>
+                    </Column>
+
+                    <Column id="_IDGenColumn3">
+                        <Text id="_IDGenText3" text="Salary"/>
+                    </Column>
+
+                    <Column id="_IDGenColumn4">
+                        <Text id="_IDGenText4" text="Age"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1">
+                        <cells>
+                            <Text id="_IDGenText5" text="{Id}"/>
+                        </cells>
+
+                        <cells>
+                            <Text id="_IDGenText6" text="{Name}"/>
+                        </cells>
+
+                        <cells>
+                            <Text id="_IDGenText8" text="{Salary}"/>
+                        </cells>
+                        <cells>
+                            <Text id="_IDGenText7" text="{Age}"/>
+                        </cells>                   
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <Title id="_IDGenTitle1" text="Employee Details" class="myformTitle"></Title>
+
+        <myform:SimpleForm id="cMyform" editable="true" >
+           <myform:content>
+
+            <Label id="_IDGenLabel1" text="Emp_Id"/><Text id="_IDGenText9" text="{Id}"/>
+
+            <Label id="_IDGenLabel2" text="Name"/><Text id="_IDGenText10" text="{Name}"/>
+
+            <Label id="_IDGenLabel4" text="Salary"/><Text id="_IDGenText12" text="{Salary}"/>
+
+            <Label id="_IDGenLabel5" text="City"/><Text id="_IDGenInput5" text="{City}"/>
+
+           </myform:content>
+        </myform:SimpleForm>
+     
+        <footer>
+            <Bar id="_IDGenBar1">
+                <contentRight>
+
+                   <Button id="_IDGenButton1" text="Create" press="oCreateEmpPopup" type="Emphasized"/>
+
+                   <Button id="_IDGenButton" text="Read" press="oSearchEmpPopup" type="Emphasized"/>
+
+                   <Button id="_IDGenButton2" text="Update" press="oUpdateEmpPopup" type="Emphasized"/>
+
+                    <Button id="_IDGenButton3" text="Delete" press="oDeleteEmp" type="Negative"/>
+
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+   </App>
+</mvc:View>

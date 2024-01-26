@@ -1,0 +1,30 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:myform="sap.ui.layout.form"> 
+<Dialog id="_IDGenDialog1">
+    <content>
+       <myform:SimpleForm id="_IDGenSimpleForm1" editable="true">
+
+        <Input id="_IDGenInput1" placeholder="Enter Emp_Id"/>
+
+        <Button id="_IDGenButton2" press="oReadEmp1" icon="sap-icon://search"/>
+
+       </myform:SimpleForm>
+    </content>
+
+    <customHeader>
+        <Bar id="_IDGenBar1">
+
+            <contentLeft>
+                <Text id="_IDGenText1"  text="Search Employee"/>
+            </contentLeft>
+
+            <contentRight>
+                <Button id="_IDGenButton1" icon="sap-icon://decline" press="oCloseSearchButton"/>
+            </contentRight>
+        </Bar>
+    </customHeader>
+
+</Dialog>
+</c:FragmentDefinition>
