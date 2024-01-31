@@ -61,13 +61,28 @@ sap.ui.define(
             '@media print { button, #sec_2{display:none} }'+            
             '</style>';
 
+
+            // const oOptions = {};
+            // const element1 = this.getView().byId("SAPUI5content").getDomRef();
+            // await html2pdf().set(oOptions).from(element1).save();
+
+          let htmlTagScriptPDF = '<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>';
+
+          // 출처: https://lisfe.tistory.com/680 [브이디자인 V 전주한옥마을닷컴:티스토리]
           let htmlTagScript = '<script>'+
             'function onPrint(){ window.print(); window.close(); }'+
+            'function onHTMLPDF(){ '+
+            '  const oOptions = {  margin: [0.3,1,0.5,1] }; '+ //top, left, buttom, right,
+            // '  const elementHTML = document.body; '+
+            '  const elementHTML = document.getElementById("pdf_canvas");'+
+            '  html2pdf().set(oOptions).from(elementHTML).save(); '+
+            '}'+
             '</script>';
          
           let htmlTagButton = 
-          '<button type="button" style="float: right;" onclick="onPrint()")">Print</button> <br>';
+          '<button type="button" style="float: right;" onclick="onPrint()")">Print</button>&nbsp;<button type="button" style="float: right;" onclick="onHTMLPDF()")">PDF</button>';
 
+          let startHTML='<div id="pdf_canvas">';
           let htmlTag = 
           '<table width="100%" style="border:1px solid black; border-collapse:collapse">'+
             '<tr>'+
@@ -313,12 +328,12 @@ sap.ui.define(
               
                   '</tbody>'+
                   '</table>';
-
+          let endHTML='</div>';
             
 
 
 
-          var sTargetContent = htmlTagCss+htmlTagButton+htmlTagP+htmlTag+htmlTagP+htmlTag2+htmlTagP+htmlTag3+htmlTagP+htmlTag4+htmlTagP+htmlTag5;
+          var sTargetContent = htmlTagCss+htmlTagButton+startHTML+htmlTagP+htmlTag+htmlTagP+htmlTag2+htmlTagP+htmlTag3+htmlTagP+htmlTag4+htmlTagP+htmlTag5+endHTML;
               
           //var w = window.open();
           // 사이즈 지정해서 열기, 그냥 열면 탭으로 열림.
@@ -326,7 +341,7 @@ sap.ui.define(
           var w = window.open("", "_blank", "width=1000, height=800");
 
           var printOne = sTargetContent; // 프린트 될 섹션
-          w.document.write('<html><head><title>Pay Slip</title><style>'+htmlTagCss+'</style>'+htmlTagScript+'</head><body >' + printOne + '</body></html>');
+          w.document.write('<html><head><title>Pay Slip</title><style>'+htmlTagCss+'</style>'+htmlTagScriptPDF+htmlTagScript+'</head><body >' + printOne + '</body></html>');
           w.document.close();
           //w.window.print();
         },
@@ -502,7 +517,7 @@ sap.ui.define(
           const oOptions = {};
           const element1 = this.getView().byId("SAPUI5content").getDomRef();
           await html2pdf().set(oOptions).from(element1).save();
-      },
+        },
         
 
         onPdfPrint: async function(){
