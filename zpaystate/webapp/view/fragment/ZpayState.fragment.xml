@@ -5,11 +5,11 @@
    
         <Panel headerText="Pay Statement" class="sapUiSmallMarginTop">
         <content>
-            <VBox binding="{/sample}">
+            <VBox>
                 <grid:CSSGrid class="grid-form" gridTemplateColumns="1fr " gridGap="1px 0px">
                     <HBox class="grid-item contents-box" alignItems="Center">
                         <Text text="Pay Date : " />
-                        <DatePicker dateValue="{Begda}" displayFormat="yyyy-MM-dd" class="sapUiTinyMarginBegin" />
+                        <DatePicker dateValue="{/Begda}" displayFormat="dd-MM-yyyy" class="sapUiTinyMarginBegin" />
                         <!-- <Select>
                             <core:Item key="GR" text="Greece" />
                             <core:Item key="MX" text="Mexico" />
@@ -31,8 +31,9 @@
                             <core:Item key="NZ" text="New Zealand" />
                             <core:Item key="NL" text="Netherlands" />
                         </Select> -->
-                         <Button text="Pay Summary" icon="sap-icon://sum" press=".onPressPaySummary" />
-                         <Button text="Pay Detail"  icon="sap-icon://detail-view" press=".onPressPaySummary" />
+                         <Button text="[SAPUI5] Pay Summary " icon="sap-icon://sum" press=".onPressPaySummary" />
+                         <Button text="[SAPUI5 + HTML]Pay Detail"  icon="sap-icon://detail-view" press=".onPressPaySummaryHTML" />
+                         <Button text="[New Window]Pay Detail"  icon="sap-icon://detail-view" press=".onPressWindow" />
                     </HBox>
                 </grid:CSSGrid>
               

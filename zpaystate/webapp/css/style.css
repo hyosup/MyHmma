@@ -24,6 +24,11 @@ html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
    padding: 10px 0 10px 10px;
  }
 
+ .label-box-noheight {
+  background-color: #f5f5f5;
+  padding: 10px 0 10px 10px;
+}
+
  .label-box .sapMLabel {
    color: #333333;
  }
@@ -33,6 +38,10 @@ html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
    padding: 10px 0 10px 10px;
  }
 
+ .contents-box-noheight {
+  padding: 10px 0 10px 10px;
+}
+
  .grid-item {
    border-right: 1px solid #ddd;
    border-bottom: 1px solid #ddd;
@@ -41,3 +50,13 @@ html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
  .grid-item.last {
    border-right: transparent;
  }
+
+ .uoBGPrint { 
+    background-color : #ECFCEB
+  
+  }
+
+  /* CSS */
+@media print {  table td {background-color:#e8e8e8 !important; -webkit-print-color-adjust:exact;}}
+
+h1, h2, h3, h4, h5, dl, dt, dd, ul, li, ol, th, td, p, blockquote, form, fieldset, legend, div,body { -webkit-print-color-adjust:exact; }

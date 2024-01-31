@@ -15,10 +15,14 @@
     <Shell >
         <App id="app">
             <pages>
-                <Page title="MyHMMA">
+                <Page title="MyHMMA" id="MyHMMA">
                     <content>
                         <core:Fragment fragmentName="com.hmmausa.myhmma.mypay.zpaystate.view.fragment.ZpayState" type="XML" /> 
                     </content>
+                    <!-- <content>
+                        <core:HTML id="idHTMLCon1111111" content=''>
+                        </core:HTML>
+                    </content> -->
                 </Page>
             </pages>
         </App>
